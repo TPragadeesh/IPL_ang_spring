@@ -50,13 +50,13 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push docker image
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          file: ./cricket/Dockerfile
-          push: true
-          tags: pragadeesht/backend:1
+#      - name: Build and push docker image
+#        uses: docker/build-push-action@v4
+#        with:
+#          context: .
+#          file: ./cricket/Dockerfile
+#          push: true
+#          tags: pragadeesht/backend:1
 
 #      - name: pull springboot
 #        run: docker pull pragadeesht/backend:1
@@ -66,3 +66,19 @@ jobs:
 
       - name: docker images
         run: docker images
+
+      - name: Build and push angular image
+        uses: docker/build-push-action@4
+        with:
+          context: .
+          file: ./train_app/Dockerfile
+          push: true
+          tags: pragadeesht/front-end1:latest
+
+#      - name: Build and push Docker angular image
+#          uses: docker/build-push-action@v4
+#          with:
+#            context: .
+#            file: ./Dockerfile
+#            push: true
+#            tags: pragadeesht/front-end1:latest

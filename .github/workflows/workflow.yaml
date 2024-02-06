@@ -58,8 +58,8 @@ jobs:
           push: true
           tags: pragadeesht/backend:1
 
-      - name: pull springboot
-        run: docker pull pragadeesht/backend:1
+#      - name: pull springboot
+#        run: docker pull pragadeesht/backend:1
 
 #      - name: build app
 #        run: docker build -t spring-app2 .

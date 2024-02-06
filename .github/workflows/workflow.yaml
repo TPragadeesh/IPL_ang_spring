@@ -10,21 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: dorny/path-filter@v3
+        id: changes
+        with:
+          filters: |
+            backend:
+              - 'cricket/**'
 
-
-      - name: Simply test
-        run: echo "hello world"
-
-      - name: display image
-        run: docker images
-
-#      - name: elasticsearch image
-#        run: docker pull docker.elastic.co/elasticsearch/elasticsearch:8.8.1
-
-      - name: display elastic image
-        run: docker images
 
       - name: setting up java maven
+        if: steps.changes.outputs.backend == 'true'
         uses: actions/setup-java@v4
         with:
           java-version: '21'
@@ -32,16 +27,12 @@ jobs:
           cache: maven
 
       - name: Build with Maven
+        if: steps.changes.outputs.backend == 'true'
         run: |
           cd cricket/cricket
           mvn --batch-mode --update-snapshots verify
       
 
-#      - name: build spring boot image
-#        run: docker build -t spring-app ./cricket
-#
-#      - name: display spring-app image
-#        run: docker images
 
       - name: Login to  Docker hub
         uses: docker/login-action@v3
@@ -50,24 +41,25 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-#      - name: Build and push docker image
-#        uses: docker/build-push-action@v4
-#        with:
-#          context: .
-#          file: ./cricket/Dockerfile
-#          push: true
-#          tags: pragadeesht/backend:1
+      - name: Build and push docker image
+        if: steps.changes.outputs.backend == 'true'
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./cricket/Dockerfile
+          push: true
+          tags: pragadeesht/backend:2
 
-#      - name: pull springboot
-#        run: docker pull pragadeesht/backend:1
+      - name: pull springboot
+        if: steps.changes.outputs.backend == 'true'
+        run: docker pull pragadeesht/backend:2
 
-#      - name: build app
-#        run: docker build -t spring-app2 .
 
       - name: docker images
         run: docker images
 
       - name: Build and push angular image
+        if: steps.changes.outputs.backend != 'true'
         uses: docker/build-push-action@v4
         with:
           context: .
@@ -75,10 +67,3 @@ jobs:
           push: true
           tags: pragadeesht/front-end1:latest
 
-#      - name: Build and push Docker angular image
-#          uses: docker/build-push-action@v4
-#          with:
-#            context: .
-#            file: ./Dockerfile
-#            push: true
-#            tags: pragadeesht/front-end1:latest

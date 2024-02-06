@@ -14,18 +14,18 @@ import { SellerService } from '../services/seller.service';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  
+
   menuType:string = "default";
   teamName:string = "";
   searchResult:undefined|player[];
-  bcolor:string = "#0082e6";
+  bcolor:string = "#0082e7";
 
   constructor(private route:Router, private product: ProductService, private manager: SellerService){}
 
   ngOnInit(): void{
-    
+
     this.route.events.subscribe((val:any) =>{
-      
+
       if(val.url){
         console.warn(val.url);
         if(val.url.includes("manager") && localStorage.getItem("manager")){
@@ -44,12 +44,12 @@ export class HeaderComponent {
               this.bcolor = result.color;
             }
           })
-          
-        }else { 
+
+        }else {
           console.warn("outside of manager area");
           this.menuType = "default"
           this.bcolor = "#0082e6";
-      
+
         }
       }
 

@@ -54,7 +54,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./Dockerfile
+          file: ./cricket/Dockerfile
           push: true
           tags: pragadeesht/backend:1
 

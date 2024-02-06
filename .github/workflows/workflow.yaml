@@ -16,6 +16,8 @@ jobs:
           filters: |
             backend:
               - 'cricket/**'
+            frontend:
+              - 'train_app/**'
 
 
       - name: setting up java maven
@@ -59,7 +61,7 @@ jobs:
         run: docker images
 
       - name: Build and push angular image
-        if: steps.changes.outputs.backend != 'true'
+        if: steps.changes.outputs.frontend == 'true'
         uses: docker/build-push-action@v4
         with:
           context: .

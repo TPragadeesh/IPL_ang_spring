@@ -18,8 +18,8 @@ jobs:
       - name: display image
         run: docker images
 
-      - name: elasticsearch image
-        run: docker pull docker.elastic.co/elasticsearch/elasticsearch:8.8.1
+#      - name: elasticsearch image
+#        run: docker pull docker.elastic.co/elasticsearch/elasticsearch:8.8.1
 
       - name: display elastic image
         run: docker images

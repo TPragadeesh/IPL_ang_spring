@@ -17,7 +17,7 @@ services:
     networks:
       - docker-elk
   backend:
-    image: spring-app:latest
+    image: pragadeesht/spring-app:latest
     container_name: spring-app
     ports:
       - "8080:8080"

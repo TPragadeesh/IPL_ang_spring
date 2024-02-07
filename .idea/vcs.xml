@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/actions-runner/_work/IPL_ang_spring/IPL_ang_spring" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cricket" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/train_app" vcs="Git" />
   </component>

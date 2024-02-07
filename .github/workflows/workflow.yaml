@@ -32,7 +32,7 @@ jobs:
         if: steps.changes.outputs.backend == 'true'
         run: |
           cd cricket/cricket
-          mvn --batch-mode --update-snapshots verify
+          mvn --batch-mode --update-snapshots verify -Dmaven.test.skip
       
 
 

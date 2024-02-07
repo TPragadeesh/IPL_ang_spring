@@ -16,8 +16,13 @@ import java.util.List;
 @RequestMapping("/manager")
 public class ManagerController {
 
-    @Autowired
+
     private ManagerService managerService;
+
+    @Autowired
+    public ManagerController(ManagerService managerService){
+        this.managerService = managerService;
+    }
 
     @PostMapping("/signup")
     ResponseEntity<Manager> signUp(@RequestBody ManagerSignUpRequestDTO body) {

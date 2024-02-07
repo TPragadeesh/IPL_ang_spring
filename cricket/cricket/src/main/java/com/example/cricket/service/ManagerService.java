@@ -13,8 +13,12 @@ import java.util.Optional;
 @Service
 public class ManagerService {
 
-    @Autowired
     private ManagerRepo managerRepo;
+
+    @Autowired
+    public ManagerService(ManagerRepo managerRepo){
+        this.managerRepo = managerRepo;
+    }
 
     public Manager addManager(String teamName, String password, String image, String color) {
         Manager manager = new Manager();

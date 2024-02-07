@@ -133,6 +133,7 @@ jobs:
     - name: build angular image
       run: docker pull pragadeesht/angulartest2:latest
 
+
     - name: docker compose
       run: |
           cd cricket

@@ -69,3 +69,49 @@ jobs:
           push: true
           tags: pragadeesht/front-end1:latest
 
+  runningtests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: setting up java maven
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Build with Maven
+        run: |
+          cd cricket/cricket
+          mvn --batch-mode --update-snapshots verify -Dmaven.test.skip
+
+      - name: elastic search image
+        run: docker pull docker.elastic.co/elasticsearch/elasticsearch:8.8.1
+
+      - name: build elastic search image
+        run: docker build -t spring-app ./cricket
+
+      - name: docker compose
+        run: |
+          cd cricket
+          cd cricket
+          docker compose up
+
+      - name: run tests
+        run: |
+          cd cricket/cricket
+          mvn test
+
+#            java-version: '21'
+#            distribution: 'temurin'
+#            cache: maven
+#
+#            - name: Build with Maven
+#              if: steps.changes.outputs.backend == 'true'
+#              run: |
+#                cd cricket/cricket
+#                mvn --batch-mode --update-snapshots verify -Dmaven.test.skip
+
+
+

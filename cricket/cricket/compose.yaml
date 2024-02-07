@@ -31,15 +31,15 @@ services:
     depends_on:
       elasticsearch:
         condition: service_healthy
-#  angular:
-#    image: angulartest2
-#    container_name: angulartest2
-#    ports:
-#      - "4200:4200"
-#    networks:
-#      - docker-elk
-#    links:
-#      - backend
+  angular:
+    image: pragadeesht/angulartest2:latest
+    container_name: angulartest2
+    ports:
+      - "4200:4200"
+    networks:
+      - docker-elk
+    links:
+      - backend
 networks:
   docker-elk:
     driver: bridge

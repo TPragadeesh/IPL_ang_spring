@@ -1,0 +1,4065 @@
+[2024-02-07 10:20:04Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2024-02-07 10:20:04Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:04Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:04Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\.credentials'
+[2024-02-07 10:20:04Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:04Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:04Z INFO HostContext] Well known config file 'Runner': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\.runner'
+[2024-02-07 10:20:04Z INFO Worker] Version: 2.312.0
+[2024-02-07 10:20:04Z INFO Worker] Commit: 1615de2f78ce16935be95ace79d35ed22b0837be
+[2024-02-07 10:20:04Z INFO Worker] Culture: en-IN
+[2024-02-07 10:20:04Z INFO Worker] UI Culture: en-US
+[2024-02-07 10:20:04Z INFO Worker] Waiting to receive the job message from the channel.
+[2024-02-07 10:20:04Z INFO ProcessChannel] Receiving message of length 25303, with hash '12604068b96464e1d1a8df78a50b3d45a3d9a220735d76ee0c8d637363a641fd'
+[2024-02-07 10:20:04Z INFO Worker] Message received.
+[2024-02-07 10:20:04Z INFO Worker] Job message:
+ {
+  "fileTable": [
+    ".github/workflows/workflow.yaml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/checkout",
+        "ref": "v4",
+        "repositoryType": "GitHub",
+        "path": ""
+      },
+      "contextName": "__actions_checkout",
+      "condition": "success()",
+      "id": "ce4790b2-251e-5077-f66e-a464c6feb979",
+      "name": "__actions_checkout"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "docker/login-action",
+        "ref": "v3",
+        "repositoryType": "GitHub",
+        "path": ""
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 121,
+        "col": 15,
+        "lit": "Login to  Docker hub"
+      },
+      "contextName": "__docker_login-action",
+      "inputs": {
+        "type": 2,
+        "file": 1,
+        "line": 124,
+        "col": 11,
+        "map": [
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 124,
+              "col": 11,
+              "lit": "registry"
+            },
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 124,
+              "col": 21,
+              "lit": "docker.io"
+            }
+          },
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 125,
+              "col": 11,
+              "lit": "username"
+            },
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 125,
+              "col": 21,
+              "expr": "secrets.DOCKERHUB_USERNAME"
+            }
+          },
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 126,
+              "col": 11,
+              "lit": "password"
+            },
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 126,
+              "col": 21,
+              "expr": "secrets.DOCKERHUB_TOKEN"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "648a091d-c3db-58d2-1689-0222d05db488",
+      "name": "__docker_login-action"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 128,
+        "col": 15,
+        "lit": "build elastic search image"
+      },
+      "contextName": "__run",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 129,
+              "col": 14,
+              "lit": "docker pull docker.elastic.co/elasticsearch/elasticsearch:8.8.1"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "d7dedd61-f0d4-52a7-2d12-40566bec885c",
+      "name": "__run"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 131,
+        "col": 15,
+        "lit": "build springboot image"
+      },
+      "contextName": "__run_2",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 132,
+              "col": 14,
+              "lit": "docker pull ***/spring-app:latest"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "b6da7b27-7b57-5afc-7be1-fd2cca5bc7d5",
+      "name": "__run_2"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 134,
+        "col": 15,
+        "lit": "build angular image"
+      },
+      "contextName": "__run_3",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 135,
+              "col": 14,
+              "lit": "docker pull ***/angulartest2:latest"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "2e11d75e-7fd1-5c13-7f66-069e3b0f8b7a",
+      "name": "__run_3"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 138,
+        "col": 15,
+        "lit": "docker compose"
+      },
+      "contextName": "__run_4",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 139,
+              "col": 14,
+              "lit": "cd cricket\ncd cricket\ndocker compose up\n"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "4a0464f2-fcfc-5e9b-7e00-0def40c4bf88",
+      "name": "__run_4"
+    }
+  ],
+  "variables": {
+    "DOCKERHUB_TOKEN": {
+      "value": "***",
+      "isSecret": true
+    },
+    "DOCKERHUB_USERNAME": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.isScheduled": {
+      "value": "False"
+    },
+    "system.servertype": {
+      "value": "Hosted"
+    },
+    "system.culture": {
+      "value": ""
+    },
+    "system.pipelineStartTime": {
+      "value": "2024-02-07 10:20:00+00:00"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode16": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode16Action": {
+      "value": "true"
+    },
+    "DistributedTask.LogTemplateErrorsAsDebugMessages": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "Actions.EnableHttpRedirects": {
+      "value": "true"
+    },
+    "DistributedTask.UseActionArchiveCache": {
+      "value": "true"
+    },
+    "DistributedTask.UseWhich2": {
+      "value": "true"
+    },
+    "DistributedTask.DetailUntarFailure": {
+      "value": "true"
+    },
+    "DistributedTask.EnableJobServerQueueTelemetry": {
+      "value": "true"
+    },
+    "DistributedTask.MarkJobAsFailedOnWorkerCrash": {
+      "value": "true"
+    },
+    "system.teamProjectId": {
+      "value": "00000000-0000-0000-0000-000000000000"
+    },
+    "build.buildId": {
+      "value": "27"
+    },
+    "build.containerId": {
+      "value": "30498984"
+    },
+    "system.workflowFilePath": {
+      "value": ".github/workflows/workflow.yaml"
+    },
+    "system.phaseDisplayName": {
+      "value": "deploy"
+    },
+    "system.phaseId": {
+      "value": "d4a9a205-d52e-57fb-7b17-15a9d984af62"
+    },
+    "system.phaseName": {
+      "value": "deploy"
+    },
+    "system.phaseAttempt": {
+      "value": "1"
+    },
+    "system.jobIdentifier": {
+      "value": "deploy.__default"
+    },
+    "system.jobAttempt": {
+      "value": "1"
+    },
+    "System.JobPositionInPhase": {
+      "value": "1"
+    },
+    "System.TotalJobsInPhase": {
+      "value": "1"
+    },
+    "system.github.job": {
+      "value": "deploy"
+    },
+    "system.jobDisplayName": {
+      "value": "deploy"
+    },
+    "system.jobId": {
+      "value": "e07742bd-189a-5079-918b-43f8b2f94b89"
+    },
+    "system.jobName": {
+      "value": "__default"
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Contents\":\"read\",\"Metadata\":\"read\",\"Packages\":\"read\"}"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.runnerEnvironment": {
+      "value": "self-hosted"
+    },
+    "system.github.results_endpoint": {
+      "value": "https://results-receiver.actions.githubusercontent.com/"
+    },
+    "system.github.results_upload_with_sdk": {
+      "value": "True"
+    },
+    "system.orchestrationId": {
+      "value": "e5d68082-a00f-40b4-8ced-e18e9bf8e3a9.deploy.__default"
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "PipelineAgentJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "Actions",
+    "version": 38,
+    "planId": "e5d68082-a00f-40b4-8ced-e18e9bf8e3a9",
+    "planGroup": "Actions:00000000-0000-0000-0000-000000000000:1",
+    "artifactUri": "vstfs:///Build/Build/27",
+    "artifactLocation": null,
+    "definition": {
+      "_links": {},
+      "id": 3,
+      "name": "IPL_ang_spring"
+    },
+    "owner": {
+      "_links": {},
+      "id": 3,
+      "name": "TPragadeesh"
+    }
+  },
+  "timeline": {
+    "id": "e5d68082-a00f-40b4-8ced-e18e9bf8e3a9",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "e07742bd-189a-5079-918b-43f8b2f94b89",
+  "jobDisplayName": "deploy",
+  "jobName": "__default",
+  "requestId": 35,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "6e3ef92e-420e-4918-baa5-2c4cc0ad5017",
+          "ServerName": "tYgXTJ2kBnbWE5Zd4yFmitMaguB5XUtankX8BWxEwCaiPq9xee",
+          "CacheServerUrl": "https://acghubeus1.actions.githubusercontent.com/tYgXTJ2kBnbWE5Zd4yFmitMaguB5XUtankX8BWxEwCaiPq9xee/",
+          "FeedStreamUrl": "https://pipelinesghubeus4.actions.githubusercontent.com/tYgXTJ2kBnbWE5Zd4yFmitMaguB5XUtankX8BWxEwCaiPq9xee/00000000-0000-0000-0000-000000000000/_apis/distributedtask/hubs/Actions/plans/e5d68082-a00f-40b4-8ced-e18e9bf8e3a9/timelines/e5d68082-a00f-40b4-8ced-e18e9bf8e3a9/records/e07742bd-189a-5079-918b-43f8b2f94b89/feedstream?api-version=6.0-preview",
+          "ResultsServiceUrl": "https://results-receiver.actions.githubusercontent.com/",
+          "ConnectivityChecks": "[\"https://acghubeus0.actions.githubusercontent.com/_apis/health\",\"https://results-receiver.actions.githubusercontent.com/health\",\"https://actions-results-receiver-production.githubapp.com/health\",\"https://pipelinesghubeus4.actions.githubusercontent.com/_apis/health\"]"
+        },
+        "name": "SystemVssConnection",
+        "url": "https://pipelinesghubeus4.actions.githubusercontent.com/tYgXTJ2kBnbWE5Zd4yFmitMaguB5XUtankX8BWxEwCaiPq9xee/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": ***
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/main"
+        },
+        {
+          "k": "sha",
+          "v": "8768104d26a4fc828d0ef119f51b9cea413b4674"
+        },
+        {
+          "k": "repository",
+          "v": "TPragadeesh/IPL_ang_spring"
+        },
+        {
+          "k": "repository_owner",
+          "v": "TPragadeesh"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "75103116"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/TPragadeesh/IPL_ang_spring.git"
+        },
+        {
+          "k": "run_id",
+          "v": "7813263569"
+        },
+        {
+          "k": "run_number",
+          "v": "29"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "1"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "public"
+        },
+        {
+          "k": "repo-self-hosted-runners-disabled",
+          "v": false
+        },
+        {
+          "k": "enterprise-managed-business-id",
+          "v": ""
+        },
+        {
+          "k": "repository_id",
+          "v": "753433153"
+        },
+        {
+          "k": "actor_id",
+          "v": "75103116"
+        },
+        {
+          "k": "actor",
+          "v": "TPragadeesh"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "TPragadeesh"
+        },
+        {
+          "k": "workflow",
+          "v": "Dockerize"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "push"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "after",
+                "v": "8768104d26a4fc828d0ef119f51b9cea413b4674"
+              },
+              {
+                "k": "base_ref",
+                "v": null
+              },
+              {
+                "k": "before",
+                "v": "76239f9b57410df5eaa90c7afeaf74963e660386"
+              },
+              {
+                "k": "commits",
+                "v": {
+                  "t": 1,
+                  "a": [
+                    {
+                      "t": 2,
+                      "d": [
+                        {
+                          "k": "author",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "***a@gmail.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "Pragadeesh"
+                              },
+                              {
+                                "k": "username",
+                                "v": "TPragadeesh"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "committer",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "***a@gmail.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "Pragadeesh"
+                              },
+                              {
+                                "k": "username",
+                                "v": "TPragadeesh"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "distinct",
+                          "v": true
+                        },
+                        {
+                          "k": "id",
+                          "v": "8768104d26a4fc828d0ef119f51b9cea413b4674"
+                        },
+                        {
+                          "k": "message",
+                          "v": "deploy syntac"
+                        },
+                        {
+                          "k": "timestamp",
+                          "v": "2024-02-07T15:49:47+05:30"
+                        },
+                        {
+                          "k": "tree_id",
+                          "v": "ce30ec5a4df95112612b9be7d07a28da94d5c67d"
+                        },
+                        {
+                          "k": "url",
+                          "v": "https://github.com/TPragadeesh/IPL_ang_spring/commit/8768104d26a4fc828d0ef119f51b9cea413b4674"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "compare",
+                "v": "https://github.com/TPragadeesh/IPL_ang_spring/compare/76239f9b5741...8768104d26a4"
+              },
+              {
+                "k": "created",
+                "v": false
+              },
+              {
+                "k": "deleted",
+                "v": false
+              },
+              {
+                "k": "forced",
+                "v": false
+              },
+              {
+                "k": "head_commit",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "author",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "***a@gmail.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Pragadeesh"
+                          },
+                          {
+                            "k": "username",
+                            "v": "TPragadeesh"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "committer",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "***a@gmail.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Pragadeesh"
+                          },
+                          {
+                            "k": "username",
+                            "v": "TPragadeesh"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "distinct",
+                      "v": true
+                    },
+                    {
+                      "k": "id",
+                      "v": "8768104d26a4fc828d0ef119f51b9cea413b4674"
+                    },
+                    {
+                      "k": "message",
+                      "v": "deploy syntac"
+                    },
+                    {
+                      "k": "timestamp",
+                      "v": "2024-02-07T15:49:47+05:30"
+                    },
+                    {
+                      "k": "tree_id",
+                      "v": "ce30ec5a4df95112612b9be7d07a28da94d5c67d"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/TPragadeesh/IPL_ang_spring/commit/8768104d26a4fc828d0ef119f51b9cea413b4674"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "pusher",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "email",
+                      "v": "75103116+TPragadeesh@users.noreply.github.com"
+                    },
+                    {
+                      "k": "name",
+                      "v": "TPragadeesh"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/main"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "allow_forking",
+                      "v": true
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/TPragadeesh/IPL_ang_spring.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": 1707197328.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": null
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "TPragadeesh/IPL_ang_spring"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/TPragadeesh/IPL_ang_spring.git"
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/TPragadeesh/IPL_ang_spring"
+                    },
+                    {
+                      "k": "id",
+                      "v": 753433153.0
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "JavaScript"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "master_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "IPL_ang_spring"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDOLOh6QQ"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/75103116?v=4"
+                          },
+                          {
+                            "k": "email",
+                            "v": "75103116+TPragadeesh@users.noreply.github.com"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/TPragadeesh/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/TPragadeesh/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/TPragadeesh/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/TPragadeesh/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/TPragadeesh"
+                          },
+                          {
+                            "k": "id",
+                            "v": 75103116.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "TPragadeesh"
+                          },
+                          {
+                            "k": "name",
+                            "v": "TPragadeesh"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "MDQ6VXNlcjc1MTAzMTE2"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/TPragadeesh/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/TPragadeesh/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/TPragadeesh/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/TPragadeesh/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/TPragadeesh/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/TPragadeesh"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": 1707301196.0
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 37704.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:TPragadeesh/IPL_ang_spring.git"
+                    },
+                    {
+                      "k": "stargazers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/TPragadeesh/IPL_ang_spring"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/teams"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/TPragadeesh/IPL_ang_spring/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2024-02-07T10:15:33Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/TPragadeesh/IPL_ang_spring"
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "public"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": false
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/75103116?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/TPragadeesh/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/TPragadeesh/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/TPragadeesh/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/TPragadeesh/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/TPragadeesh"
+                    },
+                    {
+                      "k": "id",
+                      "v": 75103116.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "TPragadeesh"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "MDQ6VXNlcjc1MTAzMTE2"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/TPragadeesh/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/TPragadeesh/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/TPragadeesh/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/TPragadeesh/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/TPragadeesh/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/TPragadeesh"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "main"
+        },
+        {
+          "k": "ref_protected",
+          "v": false
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "workflow_ref",
+          "v": "TPragadeesh/IPL_ang_spring/.github/workflows/workflow.yaml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "8768104d26a4fc828d0ef119f51b9cea413b4674"
+        }
+      ]
+    },
+    "run-feature-flags": {
+      "t": 2,
+      "d": [
+        {
+          "k": "actions_stream_logs_via_results_service",
+          "v": false
+        },
+        {
+          "k": "actions_use_results_service",
+          "v": true
+        }
+      ]
+    },
+    "partialrerun": false,
+    "needs": {
+      "t": 2
+    },
+    "vars": null,
+    "inputs": {
+      "t": 2
+    },
+    "matrix": null,
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    },
+    "EndpointsOverride": null
+  }
+}
+[2024-02-07 10:20:04Z INFO JobRunner] Job ID e07742bd-189a-5079-918b-43f8b2f94b89
+[2024-02-07 10:20:04Z INFO JobRunner] Creating job server with URL: https://pipelinesghubeus4.actions.githubusercontent.com/tYgXTJ2kBnbWE5Zd4yFmitMaguB5XUtankX8BWxEwCaiPq9xee/
+[2024-02-07 10:20:04Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin\Runner.Worker.dll
+[2024-02-07 10:20:04Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:04Z INFO ConfigurationStore] binPath: C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin
+[2024-02-07 10:20:04Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:04Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:04Z INFO ConfigurationStore] RootFolder: C:\Users\prath\Downloads\ang-spring-project\actions-runner
+[2024-02-07 10:20:04Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:04Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:04Z INFO HostContext] Well known config file 'Runner': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\.runner'
+[2024-02-07 10:20:04Z INFO ConfigurationStore] ConfigFilePath: C:\Users\prath\Downloads\ang-spring-project\actions-runner\.runner
+[2024-02-07 10:20:04Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:04Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:04Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\.credentials'
+[2024-02-07 10:20:04Z INFO ConfigurationStore] CredFilePath: C:\Users\prath\Downloads\ang-spring-project\actions-runner\.credentials
+[2024-02-07 10:20:04Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:04Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:04Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\.credentials_migrated'
+[2024-02-07 10:20:04Z INFO ConfigurationStore] MigratedCredFilePath: C:\Users\prath\Downloads\ang-spring-project\actions-runner\.credentials_migrated
+[2024-02-07 10:20:04Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:04Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:04Z INFO HostContext] Well known config file 'Service': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\.service'
+[2024-02-07 10:20:04Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\prath\Downloads\ang-spring-project\actions-runner\.service
+[2024-02-07 10:20:04Z INFO ConfigurationStore] Read setting file: 312 chars
+[2024-02-07 10:20:04Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2024-02-07 10:20:04Z INFO Worker] Listening for cancel message from the channel.
+[2024-02-07 10:20:04Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2024-02-07 10:20:05Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2024-02-07 10:20:05Z INFO JobServer] Creating websocket client ...wss://pipelinesghubeus4.actions.githubusercontent.com/tYgXTJ2kBnbWE5Zd4yFmitMaguB5XUtankX8BWxEwCaiPq9xee/00000000-0000-0000-0000-000000000000/_apis/distributedtask/hubs/Actions/plans/e5d68082-a00f-40b4-8ced-e18e9bf8e3a9/timelines/e5d68082-a00f-40b4-8ced-e18e9bf8e3a9/records/e07742bd-189a-5079-918b-43f8b2f94b89/feedstream?api-version=6.0-preview
+[2024-02-07 10:20:05Z INFO JobServer] Attempting to start websocket client with delay 00:00:00.
+[2024-02-07 10:20:06Z INFO JobServerQueue] Initializing results client
+[2024-02-07 10:20:06Z INFO JobServerQueue] Start process web console line queue.
+[2024-02-07 10:20:06Z INFO JobServerQueue] Start process file upload queue.
+[2024-02-07 10:20:06Z INFO JobServerQueue] Start results file upload queue.
+[2024-02-07 10:20:06Z INFO JobServerQueue] Starting results-based upload queue...
+[2024-02-07 10:20:06Z INFO JobServerQueue] Start process timeline update queue.
+[2024-02-07 10:20:06Z INFO ExecutionContext] Initialize GitHub context
+[2024-02-07 10:20:06Z INFO ExecutionContext] Initialize Env context
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:06Z INFO JobRunner] Starting the job execution context.
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:06Z INFO JobRunner] Validating directory permissions for: 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Tools': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_tool'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Temp': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp'
+[2024-02-07 10:20:06Z INFO JobRunner] Getting job extension.
+[2024-02-07 10:20:06Z INFO JobRunner] Initialize job. Getting all job steps.
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:06Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\.credentials'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:06Z INFO HostContext] Well known config file 'SetupInfo': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\.setup_info'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:06Z INFO PipelineDirectoryManager] Loading tracking config if exists: C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_PipelineMapping\TPragadeesh/IPL_ang_spring\PipelineFolder.json
+[2024-02-07 10:20:06Z INFO PipelineDirectoryManager] Creating a new tracking config file.
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:06Z INFO PipelineDirectoryManager] Creating pipeline directory.
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:06Z INFO PipelineDirectoryManager] Creating workspace directory.
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:06Z INFO JobExtension] Downloading actions
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:06Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:06Z INFO ActionManager] Save archive 'https://api.github.com/repos/actions/checkout/zipball/b4ffde65f46336ab88eb53be808477a3936bae11' into C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions\_temp_332ec518-72d4-4b66-85bd-0dbdb7b1f893\fc1442f7-9eae-49f5-8fb7-a76561870d13.zip.
+[2024-02-07 10:20:06Z INFO JobServer] Successfully started websocket client.
+[2024-02-07 10:20:06Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'eb74147d-b6a7-4098-ab8b-d43f26517da3', success rate: 1/1.
+[2024-02-07 10:20:07Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'eb74147d-b6a7-4098-ab8b-d43f26517da3', success rate: 1/1.
+[2024-02-07 10:20:07Z INFO ActionManager] Request URL: https://api.github.com/repos/actions/checkout/zipball/b4ffde65f46336ab88eb53be808477a3936bae11 X-GitHub-Request-Id: 4C2F:DDEE5:1445A:57950:65C35956 Http Status: OK
+[2024-02-07 10:20:07Z INFO ActionManager] Finished getting action repository.
+[2024-02-07 10:20:07Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2024-02-07 10:20:08Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:08Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:08Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:08Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:08Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:08Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:08Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:08Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:08Z INFO ActionManager] Save archive 'https://api.github.com/repos/docker/login-action/zipball/343f7c4344506bcbf9b4de18042ae17996df046d' into C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions\_temp_c811b228-94c8-422b-ad0b-495731be81ce\af313bae-6eec-4d22-8377-3d6746ab8e42.zip.
+[2024-02-07 10:20:08Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'eb74147d-b6a7-4098-ab8b-d43f26517da3', success rate: 1/1.
+[2024-02-07 10:20:09Z INFO ActionManager] Request URL: https://api.github.com/repos/docker/login-action/zipball/343f7c4344506bcbf9b4de18042ae17996df046d X-GitHub-Request-Id: B4AF:EDA21:150AD:58599:65C35958 Http Status: OK
+[2024-02-07 10:20:09Z INFO ActionManager] Finished getting action repository.
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 66,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 72,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 75,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 78,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 81,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 90,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 91,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 93,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2024-02-07 10:20:09Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:09Z INFO ActionManager] Load action that reference repository from 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions\actions\checkout\v4'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 66,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 72,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 75,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 78,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 81,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 90,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 91,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 93,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2024-02-07 10:20:09Z INFO ActionManager] Action pre node.js file: N/A.
+[2024-02-07 10:20:09Z INFO ActionManager] Action node.js file: dist/index.js.
+[2024-02-07 10:20:09Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Ignore action property author.
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Ignore action property branding.
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Docker Login",
+  "description": "GitHub Action to login against a Docker registry",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 10,
+          "col": 3,
+          "lit": "registry"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 13,
+          "col": 3,
+          "lit": "username"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 16,
+          "col": 3,
+          "lit": "password"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 19,
+          "col": 3,
+          "lit": "ecr"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 21,
+          "col": 14,
+          "lit": "auto"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 23,
+          "col": 3,
+          "lit": "logout"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 25,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2024-02-07 10:20:09Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:09Z INFO ActionManager] Load action that reference repository from 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions\docker\login-action\v3'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Ignore action property author.
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Ignore action property branding.
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Docker Login",
+  "description": "GitHub Action to login against a Docker registry",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 10,
+          "col": 3,
+          "lit": "registry"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 13,
+          "col": 3,
+          "lit": "username"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 16,
+          "col": 3,
+          "lit": "password"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 19,
+          "col": 3,
+          "lit": "ecr"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 21,
+          "col": 14,
+          "lit": "auto"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 23,
+          "col": 3,
+          "lit": "logout"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 25,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2024-02-07 10:20:09Z INFO ActionManager] Action pre node.js file: N/A.
+[2024-02-07 10:20:09Z INFO ActionManager] Action node.js file: dist/index.js.
+[2024-02-07 10:20:09Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2024-02-07 10:20:09Z INFO JobExtension] Adding .
+[2024-02-07 10:20:09Z INFO JobExtension] Adding .
+[2024-02-07 10:20:09Z INFO JobExtension] Adding .
+[2024-02-07 10:20:09Z INFO JobExtension] Adding .
+[2024-02-07 10:20:09Z INFO JobExtension] Adding .
+[2024-02-07 10:20:09Z INFO JobExtension] Adding .
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:09Z INFO JobExtension] Total accessible running process: 278.
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:09Z INFO JobExtension] Start checking server connectivity.
+[2024-02-07 10:20:09Z INFO JobExtension] Check server connectivity for https://acghubeus0.actions.githubusercontent.com/_apis/health.
+[2024-02-07 10:20:09Z INFO JobExtension] Check server connectivity for https://results-receiver.actions.githubusercontent.com/health.
+[2024-02-07 10:20:09Z INFO JobExtension] Check server connectivity for https://actions-results-receiver-production.githubapp.com/health.
+[2024-02-07 10:20:09Z INFO JobExtension] Check server connectivity for https://pipelinesghubeus4.actions.githubusercontent.com/_apis/health.
+[2024-02-07 10:20:09Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "eb74147d-b6a7-4098-ab8b-d43f26517da3",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 4,
+  "startTime": "2024-02-07T10:20:06.0822573Z",
+  "finishTime": "2024-02-07T10:20:09.5648974Z"
+}.
+[2024-02-07 10:20:09Z INFO JobRunner] Total job steps: 6.
+[2024-02-07 10:20:09Z INFO JobRunner] Run all job steps.
+[2024-02-07 10:20:09Z INFO StepsRunner] Processing step: DisplayName='Run actions/checkout@v4'
+[2024-02-07 10:20:09Z INFO StepsRunner] Evaluating: success()
+[2024-02-07 10:20:09Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'eb74147d-b6a7-4098-ab8b-d43f26517da3', success rate: 1/1.
+[2024-02-07 10:20:09Z INFO StepsRunner] Result: true
+[2024-02-07 10:20:09Z INFO StepsRunner] Starting the step.
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:09Z INFO StepsRunner] Which: 'chcp'
+[2024-02-07 10:20:09Z INFO StepsRunner] Location: 'C:\windows\system32\chcp.COM'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper] Starting process:
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   File name: 'C:\windows\system32\chcp.COM'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper] Process started with process id 13948, waiting for process exit.
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper] Finished process 13948 with exit code 0, and elapsed time 00:00:00.0376738.
+[2024-02-07 10:20:09Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:09Z INFO ActionManager] Load action that reference repository from 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions\actions\checkout\v4'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 66,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 72,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 75,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 78,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 81,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 90,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 91,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 93,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2024-02-07 10:20:09Z INFO ActionManager] Action pre node.js file: N/A.
+[2024-02-07 10:20:09Z INFO ActionManager] Action node.js file: dist/index.js.
+[2024-02-07 10:20:09Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2024-02-07 10:20:09Z INFO ExecutionContext] Reserve record order 8 to 14 for post job actions.
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Temp': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp'
+[2024-02-07 10:20:09Z INFO ExecutionContext] Write event payload to C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp\_github_workflow\event.json
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Temp': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp'
+[2024-02-07 10:20:09Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "TPragadeesh/IPL_ang_spring"
+}
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'filter': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 60,
+  "col": 14,
+  "lit": ""
+}
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 65,
+  "col": 14,
+  "lit": ""
+}
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 69,
+  "col": 14,
+  "lit": "true"
+}
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 72,
+  "col": 14,
+  "lit": "1"
+}
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 75,
+  "col": 14,
+  "lit": "false"
+}
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'show-progress': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 78,
+  "col": 14,
+  "lit": "true"
+}
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 81,
+  "col": 14,
+  "lit": "false"
+}
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 90,
+  "col": 14,
+  "lit": "false"
+}
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 93,
+  "col": 14,
+  "lit": "true"
+}
+[2024-02-07 10:20:09Z INFO ActionManifestManager] Input 'github-server-url': default value evaluate result: ""
+[2024-02-07 10:20:09Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2024-02-07 10:20:09Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2024-02-07 10:20:09Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2024-02-07 10:20:09Z INFO ActionCommandManager] Register action command extension for command set-env
+[2024-02-07 10:20:09Z INFO ActionCommandManager] Register action command extension for command set-output
+[2024-02-07 10:20:09Z INFO ActionCommandManager] Register action command extension for command save-state
+[2024-02-07 10:20:09Z INFO ActionCommandManager] Register action command extension for command add-path
+[2024-02-07 10:20:09Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2024-02-07 10:20:09Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2024-02-07 10:20:09Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2024-02-07 10:20:09Z INFO ActionCommandManager] Register action command extension for command warning
+[2024-02-07 10:20:09Z INFO ActionCommandManager] Register action command extension for command error
+[2024-02-07 10:20:09Z INFO ActionCommandManager] Register action command extension for command notice
+[2024-02-07 10:20:09Z INFO ActionCommandManager] Register action command extension for command debug
+[2024-02-07 10:20:09Z INFO ActionCommandManager] Register action command extension for command group
+[2024-02-07 10:20:09Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2024-02-07 10:20:09Z INFO ActionCommandManager] Register action command extension for command echo
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:09Z INFO HostContext] Well known directory 'Externals': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\externals'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper] Starting process:
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\externals\node20\bin\node.exe'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions\actions\checkout\v4\dist/index.js"'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\IPL_ang_spring\IPL_ang_spring'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2024-02-07 10:20:09Z INFO ProcessInvokerWrapper] Process started with process id 19936, waiting for process exit.
+[2024-02-07 10:20:09Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ce4790b2-251e-5077-f66e-a464c6feb979', success rate: 1/1.
+[2024-02-07 10:20:10Z INFO JobServerQueue] Got a step log file to send to results service.
+[2024-02-07 10:20:10Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag\blocks\e5d68082-a00f-40b4-8ced-e18e9bf8e3a9_eb74147d-b6a7-4098-ab8b-d43f26517da3.1
+[2024-02-07 10:20:10Z INFO AddMaskCommandExtension] Add new secret mask with length of 76
+[2024-02-07 10:20:10Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ce4790b2-251e-5077-f66e-a464c6feb979', success rate: 1/1.
+[2024-02-07 10:20:10Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2024-02-07 10:20:10Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ce4790b2-251e-5077-f66e-a464c6feb979', success rate: 1/1.
+[2024-02-07 10:20:10Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ce4790b2-251e-5077-f66e-a464c6feb979', success rate: 1/1.
+[2024-02-07 10:20:12Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2024-02-07 10:20:12Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ce4790b2-251e-5077-f66e-a464c6feb979', success rate: 1/1.
+[2024-02-07 10:20:13Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ce4790b2-251e-5077-f66e-a464c6feb979', success rate: 1/1.
+[2024-02-07 10:20:14Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ce4790b2-251e-5077-f66e-a464c6feb979', success rate: 1/1.
+[2024-02-07 10:20:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:19Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:27Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ce4790b2-251e-5077-f66e-a464c6feb979', success rate: 1/1.
+[2024-02-07 10:20:29Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ce4790b2-251e-5077-f66e-a464c6feb979', success rate: 1/1.
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper] Finished process 19936 with exit code 0, and elapsed time 00:00:20.1065077.
+[2024-02-07 10:20:29Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ce4790b2-251e-5077-f66e-a464c6feb979', success rate: 1/1.
+[2024-02-07 10:20:29Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp\_runner_file_commands\step_summary_0757daf3-cfeb-48f3-bca9-54f42a1c3e1a) is empty; skipping attachment upload
+[2024-02-07 10:20:29Z INFO StepsRunner] Step result: 
+[2024-02-07 10:20:29Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v4",
+  "type": "node20",
+  "stage": "Main",
+  "stepId": "ce4790b2-251e-5077-f66e-a464c6feb979",
+  "stepContextName": "__actions_checkout",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 21,
+  "startTime": "2024-02-07T10:20:09.5749939Z",
+  "finishTime": "2024-02-07T10:20:29.7933445Z"
+}.
+[2024-02-07 10:20:29Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2024-02-07 10:20:29Z INFO StepsRunner] Current state: job state = ''
+[2024-02-07 10:20:29Z INFO StepsRunner] Processing step: DisplayName='Login to  Docker hub'
+[2024-02-07 10:20:29Z INFO StepsRunner] Evaluating: success()
+[2024-02-07 10:20:29Z INFO StepsRunner] Result: true
+[2024-02-07 10:20:29Z INFO StepsRunner] Starting the step.
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:29Z INFO StepsRunner] Which: 'chcp'
+[2024-02-07 10:20:29Z INFO StepsRunner] Location: 'C:\windows\system32\chcp.COM'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper] Starting process:
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   File name: 'C:\windows\system32\chcp.COM'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper] Process started with process id 22468, waiting for process exit.
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper] Finished process 22468 with exit code 0, and elapsed time 00:00:00.0307434.
+[2024-02-07 10:20:29Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:29Z INFO ActionManager] Load action that reference repository from 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions\docker\login-action\v3'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:29Z INFO ActionManifestManager] Ignore action property author.
+[2024-02-07 10:20:29Z INFO ActionManifestManager] Ignore action property branding.
+[2024-02-07 10:20:29Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Docker Login",
+  "description": "GitHub Action to login against a Docker registry",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 10,
+          "col": 3,
+          "lit": "registry"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 13,
+          "col": 3,
+          "lit": "username"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 16,
+          "col": 3,
+          "lit": "password"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 19,
+          "col": 3,
+          "lit": "ecr"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 21,
+          "col": 14,
+          "lit": "auto"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 23,
+          "col": 3,
+          "lit": "logout"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 25,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2024-02-07 10:20:29Z INFO ActionManager] Action pre node.js file: N/A.
+[2024-02-07 10:20:29Z INFO ActionManager] Action node.js file: dist/index.js.
+[2024-02-07 10:20:29Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Temp': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp'
+[2024-02-07 10:20:29Z INFO ExecutionContext] Write event payload to C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp\_github_workflow\event.json
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Temp': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp'
+[2024-02-07 10:20:29Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2024-02-07 10:20:29Z INFO ActionManifestManager] Input 'ecr': default value evaluate result: {
+  "type": 0,
+  "file": 3,
+  "line": 21,
+  "col": 14,
+  "lit": "auto"
+}
+[2024-02-07 10:20:29Z INFO ActionManifestManager] Input 'logout': default value evaluate result: {
+  "type": 0,
+  "file": 3,
+  "line": 25,
+  "col": 14,
+  "lit": "true"
+}
+[2024-02-07 10:20:29Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2024-02-07 10:20:29Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2024-02-07 10:20:29Z INFO ActionCommandManager] Register action command extension for command set-env
+[2024-02-07 10:20:29Z INFO ActionCommandManager] Register action command extension for command set-output
+[2024-02-07 10:20:29Z INFO ActionCommandManager] Register action command extension for command save-state
+[2024-02-07 10:20:29Z INFO ActionCommandManager] Register action command extension for command add-path
+[2024-02-07 10:20:29Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2024-02-07 10:20:29Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2024-02-07 10:20:29Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2024-02-07 10:20:29Z INFO ActionCommandManager] Register action command extension for command warning
+[2024-02-07 10:20:29Z INFO ActionCommandManager] Register action command extension for command error
+[2024-02-07 10:20:29Z INFO ActionCommandManager] Register action command extension for command notice
+[2024-02-07 10:20:29Z INFO ActionCommandManager] Register action command extension for command debug
+[2024-02-07 10:20:29Z INFO ActionCommandManager] Register action command extension for command group
+[2024-02-07 10:20:29Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2024-02-07 10:20:29Z INFO ActionCommandManager] Register action command extension for command echo
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:29Z INFO HostContext] Well known directory 'Externals': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\externals'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper] Starting process:
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\externals\node20\bin\node.exe'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions\docker\login-action\v3\dist/index.js"'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\IPL_ang_spring\IPL_ang_spring'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2024-02-07 10:20:29Z INFO ProcessInvokerWrapper] Process started with process id 11968, waiting for process exit.
+[2024-02-07 10:20:30Z INFO JobServerQueue] Try to append 1 batches web console lines for record '648a091d-c3db-58d2-1689-0222d05db488', success rate: 1/1.
+[2024-02-07 10:20:30Z INFO JobServerQueue] Got a step log file to send to results service.
+[2024-02-07 10:20:30Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag\blocks\e5d68082-a00f-40b4-8ced-e18e9bf8e3a9_ce4790b2-251e-5077-f66e-a464c6feb979.1
+[2024-02-07 10:20:30Z INFO JobServerQueue] Try to append 1 batches web console lines for record '648a091d-c3db-58d2-1689-0222d05db488', success rate: 1/1.
+[2024-02-07 10:20:30Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2024-02-07 10:20:31Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2024-02-07 10:20:39Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:39Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:39Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:40Z INFO JobServerQueue] Try to append 1 batches web console lines for record '648a091d-c3db-58d2-1689-0222d05db488', success rate: 1/1.
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] Finished process 11968 with exit code 0, and elapsed time 00:00:10.7281085.
+[2024-02-07 10:20:40Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp\_runner_file_commands\step_summary_e50723e5-a05d-4614-a055-83722a388687) is empty; skipping attachment upload
+[2024-02-07 10:20:40Z INFO StepsRunner] Step result: 
+[2024-02-07 10:20:40Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "docker/login-action",
+  "ref": "v3",
+  "type": "node20",
+  "stage": "Main",
+  "stepId": "648a091d-c3db-58d2-1689-0222d05db488",
+  "stepContextName": "__docker_login-action",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 11,
+  "startTime": "2024-02-07T10:20:29.7944024Z",
+  "finishTime": "2024-02-07T10:20:40.5633704Z"
+}.
+[2024-02-07 10:20:40Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2024-02-07 10:20:40Z INFO StepsRunner] Current state: job state = ''
+[2024-02-07 10:20:40Z INFO StepsRunner] Processing step: DisplayName='build elastic search image'
+[2024-02-07 10:20:40Z INFO StepsRunner] Evaluating: success()
+[2024-02-07 10:20:40Z INFO StepsRunner] Result: true
+[2024-02-07 10:20:40Z INFO StepsRunner] Starting the step.
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:40Z INFO StepsRunner] Which: 'chcp'
+[2024-02-07 10:20:40Z INFO StepsRunner] Location: 'C:\windows\system32\chcp.COM'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] Starting process:
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   File name: 'C:\windows\system32\chcp.COM'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] Process started with process id 26336, waiting for process exit.
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] Finished process 26336 with exit code 0, and elapsed time 00:00:00.0265917.
+[2024-02-07 10:20:40Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Temp': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp'
+[2024-02-07 10:20:40Z INFO ExecutionContext] Write event payload to C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp\_github_workflow\event.json
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Temp': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp'
+[2024-02-07 10:20:40Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2024-02-07 10:20:40Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command set-env
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command set-output
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command save-state
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command add-path
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command warning
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command error
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command notice
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command debug
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command group
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command echo
+[2024-02-07 10:20:40Z INFO ScriptHandler] Which2: 'pwsh'
+[2024-02-07 10:20:40Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2024-02-07 10:20:40Z INFO ScriptHandler] Defaulting to powershell
+[2024-02-07 10:20:40Z INFO ScriptHandler] Which2: 'powershell'
+[2024-02-07 10:20:40Z INFO ScriptHandler] Location: 'C:\windows\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Temp': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp'
+[2024-02-07 10:20:40Z INFO ScriptHandler] Which2: 'pwsh'
+[2024-02-07 10:20:40Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2024-02-07 10:20:40Z INFO ScriptHandler] Defaulting to powershell
+[2024-02-07 10:20:40Z INFO ScriptHandler] Which2: 'powershell'
+[2024-02-07 10:20:40Z INFO ScriptHandler] Location: 'C:\windows\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] Starting process:
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   File name: 'C:\windows\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp\9cf74c29-1f02-4299-9cad-46e8d219c2ed.ps1'"'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\IPL_ang_spring\IPL_ang_spring'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] Process started with process id 26036, waiting for process exit.
+[2024-02-07 10:20:40Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd7dedd61-f0d4-52a7-2d12-40566bec885c', success rate: 1/1.
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] Finished process 26036 with exit code 1, and elapsed time 00:00:00.3366723.
+[2024-02-07 10:20:40Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp\_runner_file_commands\step_summary_6d5acfaa-74d5-4e17-99ce-c16a1fc30782) is empty; skipping attachment upload
+[2024-02-07 10:20:40Z INFO StepsRunner] Step result: Failed
+[2024-02-07 10:20:40Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "d7dedd61-f0d4-52a7-2d12-40566bec885c",
+  "stepContextName": "__run",
+  "result": "failed",
+  "errorMessages": [
+    "Process completed with exit code 1."
+  ],
+  "executionTimeInSeconds": 1,
+  "startTime": "2024-02-07T10:20:40.5642871Z",
+  "finishTime": "2024-02-07T10:20:40.9536376Z"
+}.
+[2024-02-07 10:20:40Z INFO StepsRunner] Update job result with current step result 'Failed'.
+[2024-02-07 10:20:40Z INFO StepsRunner] Current state: job state = 'Failed'
+[2024-02-07 10:20:40Z INFO StepsRunner] Processing step: DisplayName='build springboot image'
+[2024-02-07 10:20:40Z INFO StepsRunner] Evaluating: success()
+[2024-02-07 10:20:40Z INFO StepsRunner] Result: false
+[2024-02-07 10:20:40Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2024-02-07 10:20:40Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2024-02-07 10:20:40Z INFO StepsRunner] Current state: job state = 'Failed'
+[2024-02-07 10:20:40Z INFO StepsRunner] Processing step: DisplayName='build angular image'
+[2024-02-07 10:20:40Z INFO StepsRunner] Evaluating: success()
+[2024-02-07 10:20:40Z INFO StepsRunner] Result: false
+[2024-02-07 10:20:40Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2024-02-07 10:20:40Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2024-02-07 10:20:40Z INFO StepsRunner] Current state: job state = 'Failed'
+[2024-02-07 10:20:40Z INFO StepsRunner] Processing step: DisplayName='docker compose'
+[2024-02-07 10:20:40Z INFO StepsRunner] Evaluating: success()
+[2024-02-07 10:20:40Z INFO StepsRunner] Result: false
+[2024-02-07 10:20:40Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2024-02-07 10:20:40Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2024-02-07 10:20:40Z INFO StepsRunner] Current state: job state = 'Failed'
+[2024-02-07 10:20:40Z INFO StepsRunner] Processing step: DisplayName='Post Login to  Docker hub'
+[2024-02-07 10:20:40Z INFO StepsRunner] Evaluating: always()
+[2024-02-07 10:20:40Z INFO StepsRunner] Result: true
+[2024-02-07 10:20:40Z INFO StepsRunner] Starting the step.
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:40Z INFO StepsRunner] Which: 'chcp'
+[2024-02-07 10:20:40Z INFO StepsRunner] Location: 'C:\windows\system32\chcp.COM'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] Starting process:
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   File name: 'C:\windows\system32\chcp.COM'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] Process started with process id 25724, waiting for process exit.
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] Finished process 25724 with exit code 0, and elapsed time 00:00:00.0277951.
+[2024-02-07 10:20:40Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:40Z INFO ActionManager] Load action that reference repository from 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions\docker\login-action\v3'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:40Z INFO ActionManifestManager] Ignore action property author.
+[2024-02-07 10:20:40Z INFO ActionManifestManager] Ignore action property branding.
+[2024-02-07 10:20:40Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Docker Login",
+  "description": "GitHub Action to login against a Docker registry",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 10,
+          "col": 3,
+          "lit": "registry"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 13,
+          "col": 3,
+          "lit": "username"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 16,
+          "col": 3,
+          "lit": "password"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 19,
+          "col": 3,
+          "lit": "ecr"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 21,
+          "col": 14,
+          "lit": "auto"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 23,
+          "col": 3,
+          "lit": "logout"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 25,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2024-02-07 10:20:40Z INFO ActionManager] Action pre node.js file: N/A.
+[2024-02-07 10:20:40Z INFO ActionManager] Action node.js file: dist/index.js.
+[2024-02-07 10:20:40Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Temp': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp'
+[2024-02-07 10:20:40Z INFO ExecutionContext] Write event payload to C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp\_github_workflow\event.json
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Temp': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp'
+[2024-02-07 10:20:40Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2024-02-07 10:20:40Z INFO ActionManifestManager] Input 'ecr': default value evaluate result: {
+  "type": 0,
+  "file": 3,
+  "line": 21,
+  "col": 14,
+  "lit": "auto"
+}
+[2024-02-07 10:20:40Z INFO ActionManifestManager] Input 'logout': default value evaluate result: {
+  "type": 0,
+  "file": 3,
+  "line": 25,
+  "col": 14,
+  "lit": "true"
+}
+[2024-02-07 10:20:40Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command set-env
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command set-output
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command save-state
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command add-path
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command warning
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command error
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command notice
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command debug
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command group
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2024-02-07 10:20:40Z INFO ActionCommandManager] Register action command extension for command echo
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:40Z INFO HostContext] Well known directory 'Externals': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\externals'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper] Starting process:
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\externals\node20\bin\node.exe'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions\docker\login-action\v3\dist/index.js"'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\IPL_ang_spring\IPL_ang_spring'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2024-02-07 10:20:40Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper] Process started with process id 3404, waiting for process exit.
+[2024-02-07 10:20:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd7dedd61-f0d4-52a7-2d12-40566bec885c', success rate: 1/1.
+[2024-02-07 10:20:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'b9529671-0da6-44da-a3d9-6f8fb94932f4', success rate: 1/1.
+[2024-02-07 10:20:41Z INFO JobServerQueue] Got a step log file to send to results service.
+[2024-02-07 10:20:41Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag\blocks\e5d68082-a00f-40b4-8ced-e18e9bf8e3a9_648a091d-c3db-58d2-1689-0222d05db488.1
+[2024-02-07 10:20:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'b9529671-0da6-44da-a3d9-6f8fb94932f4', success rate: 1/1.
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper] Finished process 3404 with exit code 0, and elapsed time 00:00:00.4783217.
+[2024-02-07 10:20:41Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp\_runner_file_commands\step_summary_d2fda037-845a-4c08-bef0-efd5e4bf5854) is empty; skipping attachment upload
+[2024-02-07 10:20:41Z INFO StepsRunner] Step result: 
+[2024-02-07 10:20:41Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "docker/login-action",
+  "ref": "v3",
+  "type": "node20",
+  "stage": "Post",
+  "stepId": "b9529671-0da6-44da-a3d9-6f8fb94932f4",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2024-02-07T10:20:40.9556375Z",
+  "finishTime": "2024-02-07T10:20:41.4718556Z"
+}.
+[2024-02-07 10:20:41Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2024-02-07 10:20:41Z INFO StepsRunner] Current state: job state = 'Failed'
+[2024-02-07 10:20:41Z INFO StepsRunner] Processing step: DisplayName='Post Run actions/checkout@v4'
+[2024-02-07 10:20:41Z INFO StepsRunner] Evaluating: always()
+[2024-02-07 10:20:41Z INFO StepsRunner] Result: true
+[2024-02-07 10:20:41Z INFO StepsRunner] Starting the step.
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:41Z INFO StepsRunner] Which: 'chcp'
+[2024-02-07 10:20:41Z INFO StepsRunner] Location: 'C:\windows\system32\chcp.COM'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper] Starting process:
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   File name: 'C:\windows\system32\chcp.COM'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper] Process started with process id 22524, waiting for process exit.
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper] Finished process 22524 with exit code 0, and elapsed time 00:00:00.0290622.
+[2024-02-07 10:20:41Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:41Z INFO ActionManager] Load action that reference repository from 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions\actions\checkout\v4'
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Actions': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions'
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 66,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 72,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 75,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 78,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 81,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 90,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 91,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 93,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2024-02-07 10:20:41Z INFO ActionManager] Action pre node.js file: N/A.
+[2024-02-07 10:20:41Z INFO ActionManager] Action node.js file: dist/index.js.
+[2024-02-07 10:20:41Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Temp': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp'
+[2024-02-07 10:20:41Z INFO ExecutionContext] Write event payload to C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp\_github_workflow\event.json
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work'
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Temp': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp'
+[2024-02-07 10:20:41Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "TPragadeesh/IPL_ang_spring"
+}
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'filter': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 60,
+  "col": 14,
+  "lit": ""
+}
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 65,
+  "col": 14,
+  "lit": ""
+}
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 69,
+  "col": 14,
+  "lit": "true"
+}
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 72,
+  "col": 14,
+  "lit": "1"
+}
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 75,
+  "col": 14,
+  "lit": "false"
+}
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'show-progress': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 78,
+  "col": 14,
+  "lit": "true"
+}
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 81,
+  "col": 14,
+  "lit": "false"
+}
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 90,
+  "col": 14,
+  "lit": "false"
+}
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 93,
+  "col": 14,
+  "lit": "true"
+}
+[2024-02-07 10:20:41Z INFO ActionManifestManager] Input 'github-server-url': default value evaluate result: ""
+[2024-02-07 10:20:41Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2024-02-07 10:20:41Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2024-02-07 10:20:41Z INFO ActionCommandManager] Register action command extension for command set-env
+[2024-02-07 10:20:41Z INFO ActionCommandManager] Register action command extension for command set-output
+[2024-02-07 10:20:41Z INFO ActionCommandManager] Register action command extension for command save-state
+[2024-02-07 10:20:41Z INFO ActionCommandManager] Register action command extension for command add-path
+[2024-02-07 10:20:41Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2024-02-07 10:20:41Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2024-02-07 10:20:41Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2024-02-07 10:20:41Z INFO ActionCommandManager] Register action command extension for command warning
+[2024-02-07 10:20:41Z INFO ActionCommandManager] Register action command extension for command error
+[2024-02-07 10:20:41Z INFO ActionCommandManager] Register action command extension for command notice
+[2024-02-07 10:20:41Z INFO ActionCommandManager] Register action command extension for command debug
+[2024-02-07 10:20:41Z INFO ActionCommandManager] Register action command extension for command group
+[2024-02-07 10:20:41Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2024-02-07 10:20:41Z INFO ActionCommandManager] Register action command extension for command echo
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:41Z INFO HostContext] Well known directory 'Externals': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\externals'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper] Starting process:
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\externals\node20\bin\node.exe'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_actions\actions\checkout\v4\dist/index.js"'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\IPL_ang_spring\IPL_ang_spring'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2024-02-07 10:20:41Z INFO ProcessInvokerWrapper] Process started with process id 23304, waiting for process exit.
+[2024-02-07 10:20:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record '01c0fe22-f100-452e-aa26-7a41bbbbadd3', success rate: 1/1.
+[2024-02-07 10:20:41Z INFO AddMaskCommandExtension] Add new secret mask with length of 32
+[2024-02-07 10:20:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record '01c0fe22-f100-452e-aa26-7a41bbbbadd3', success rate: 1/1.
+[2024-02-07 10:20:41Z INFO JobServerQueue] Got a step log file to send to results service.
+[2024-02-07 10:20:41Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag\blocks\e5d68082-a00f-40b4-8ced-e18e9bf8e3a9_d7dedd61-f0d4-52a7-2d12-40566bec885c.1
+[2024-02-07 10:20:42Z INFO JobServerQueue] Try to upload 2 log files or attachments, success rate: 2/2.
+[2024-02-07 10:20:42Z INFO JobServerQueue] Tried to upload 2 file(s) to results, success rate: 2/2.
+[2024-02-07 10:20:43Z INFO JobServerQueue] Try to append 1 batches web console lines for record '01c0fe22-f100-452e-aa26-7a41bbbbadd3', success rate: 1/1.
+[2024-02-07 10:20:43Z INFO JobServerQueue] Got a step log file to send to results service.
+[2024-02-07 10:20:43Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag\blocks\e5d68082-a00f-40b4-8ced-e18e9bf8e3a9_b9529671-0da6-44da-a3d9-6f8fb94932f4.1
+[2024-02-07 10:20:43Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2024-02-07 10:20:44Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2024-02-07 10:20:44Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:44Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-02-07 10:20:44Z INFO ProcessInvokerWrapper] Finished process 23304 with exit code 0, and elapsed time 00:00:03.1644948.
+[2024-02-07 10:20:44Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp\_runner_file_commands\step_summary_fd74ccd6-fecd-4fd2-b589-9315e8e74e9f) is empty; skipping attachment upload
+[2024-02-07 10:20:44Z INFO StepsRunner] Step result: 
+[2024-02-07 10:20:44Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v4",
+  "type": "node20",
+  "stage": "Post",
+  "stepId": "01c0fe22-f100-452e-aa26-7a41bbbbadd3",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 4,
+  "startTime": "2024-02-07T10:20:41.4729078Z",
+  "finishTime": "2024-02-07T10:20:44.6789981Z"
+}.
+[2024-02-07 10:20:44Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2024-02-07 10:20:44Z INFO StepsRunner] Current state: job state = 'Failed'
+[2024-02-07 10:20:44Z INFO JobRunner] Finalize job.
+[2024-02-07 10:20:44Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:44Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:44Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:44Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:44Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:44Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:44Z INFO JobExtension] Initialize Env context
+[2024-02-07 10:20:44Z INFO JobExtension] Initialize steps context
+[2024-02-07 10:20:44Z INFO JobExtension] Total accessible running process: 281.
+[2024-02-07 10:20:44Z INFO JobExtension] Inspecting process environment variables. PID: 25020 (RuntimeBroker)
+[2024-02-07 10:20:44Z INFO JobExtension] Inspecting process environment variables. PID: 24384 (SearchProtocolHost)
+[2024-02-07 10:20:44Z INFO JobExtension] Inspecting process environment variables. PID: 22816 (SearchFilterHost)
+[2024-02-07 10:20:44Z WARN JobExtension] Ignore exception during read process environment variables: Access is denied.
+[2024-02-07 10:20:44Z INFO JobExtension] Inspecting process environment variables. PID: 23992 (SearchProtocolHost)
+[2024-02-07 10:20:44Z WARN JobExtension] Ignore exception during read process environment variables: Access is denied.
+[2024-02-07 10:20:44Z INFO JobExtension] Wait for all connectivity checks to finish.
+[2024-02-07 10:20:44Z INFO JobExtension] Connectivity check result: https://acghubeus0.actions.githubusercontent.com/_apis/health: OK
+[2024-02-07 10:20:44Z INFO JobExtension] Connectivity check result: https://results-receiver.actions.githubusercontent.com/health: OK
+[2024-02-07 10:20:44Z INFO JobExtension] Connectivity check result: https://actions-results-receiver-production.githubapp.com/health: OK
+[2024-02-07 10:20:44Z INFO JobExtension] Connectivity check result: https://pipelinesghubeus4.actions.githubusercontent.com/_apis/health: OK
+[2024-02-07 10:20:44Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "1553c8b1-5b9a-4bea-941b-e645d4ea719b",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2024-02-07T10:20:44.6890459Z",
+  "finishTime": "2024-02-07T10:20:44.8343522Z"
+}.
+[2024-02-07 10:20:44Z INFO JobRunner] Job result after all job steps finish: Failed
+[2024-02-07 10:20:44Z INFO JobRunner] Completing the job execution context.
+[2024-02-07 10:20:44Z INFO JobRunner] Shutting down the job server queue.
+[2024-02-07 10:20:44Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2024-02-07 10:20:45Z INFO JobServerQueue] All queue process task stopped.
+[2024-02-07 10:20:45Z INFO JobServerQueue] Try to append 1 batches web console lines for record '1553c8b1-5b9a-4bea-941b-e645d4ea719b', success rate: 1/1.
+[2024-02-07 10:20:45Z INFO JobServerQueue] Web console line queue drained.
+[2024-02-07 10:20:45Z INFO JobServerQueue] Uploading 3 files in one shot.
+[2024-02-07 10:20:47Z INFO JobServerQueue] Try to upload 3 log files or attachments, success rate: 3/3.
+[2024-02-07 10:20:47Z INFO JobServerQueue] File upload queue drained.
+[2024-02-07 10:20:47Z INFO JobServerQueue] Starting results-based upload queue...
+[2024-02-07 10:20:47Z INFO JobServerQueue] Uploading 3 file(s) in one shot through results service.
+[2024-02-07 10:20:47Z INFO JobServerQueue] Got a step log file to send to results service.
+[2024-02-07 10:20:47Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag\blocks\e5d68082-a00f-40b4-8ced-e18e9bf8e3a9_01c0fe22-f100-452e-aa26-7a41bbbbadd3.1
+[2024-02-07 10:20:47Z INFO JobServerQueue] Got a step log file to send to results service.
+[2024-02-07 10:20:47Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag\blocks\e5d68082-a00f-40b4-8ced-e18e9bf8e3a9_1553c8b1-5b9a-4bea-941b-e645d4ea719b.1
+[2024-02-07 10:20:48Z INFO JobServerQueue] Got a job log file to send to results service.
+[2024-02-07 10:20:48Z INFO JobServerQueue] Starting upload of job log file to results service ResultsLog, C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag\blocks\e5d68082-a00f-40b4-8ced-e18e9bf8e3a9_e07742bd-189a-5079-918b-43f8b2f94b89.1
+[2024-02-07 10:20:49Z INFO JobServerQueue] Tried to upload 3 file(s) to results, success rate: 3/3.
+[2024-02-07 10:20:49Z INFO JobServerQueue] Results upload queue drained.
+[2024-02-07 10:20:49Z INFO JobServerQueue] Timeline update queue drained.
+[2024-02-07 10:20:49Z INFO JobServerQueue] Disposing job server ...
+[2024-02-07 10:20:49Z INFO JobServerQueue] Disposing results server ...
+[2024-02-07 10:20:49Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2024-02-07 10:20:49Z INFO JobServerQueue] Actions upload time: 4256 ms, Result upload time: 7511 ms
+[2024-02-07 10:20:49Z INFO TempDirectoryManager] Cleaning runner temp folder: C:\Users\prath\Downloads\ang-spring-project\actions-runner\_work\_temp
+[2024-02-07 10:20:49Z INFO HostContext] Well known directory 'Bin': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\bin'
+[2024-02-07 10:20:49Z INFO HostContext] Well known directory 'Root': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner'
+[2024-02-07 10:20:49Z INFO HostContext] Well known directory 'Diag': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag'
+[2024-02-07 10:20:49Z INFO HostContext] Well known config file 'Telemetry': 'C:\Users\prath\Downloads\ang-spring-project\actions-runner\_diag\.telemetry'
+[2024-02-07 10:20:49Z INFO JobRunner] Raising job completed event
+[2024-02-07 10:20:50Z INFO Worker] Job completed.

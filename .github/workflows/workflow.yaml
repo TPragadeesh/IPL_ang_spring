@@ -104,10 +104,8 @@ jobs:
           cd cricket
           cd cricket
           docker compose up
-
-      - name: run tests
-        run: |
-          cd cricket/cricket
           mvn test
+
+      
 
 

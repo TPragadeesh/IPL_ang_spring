@@ -21,7 +21,7 @@ jobs:
 
 
       - name: setting up java maven
-        if: steps.changes.outputs.backend == 'true'
+        #if: steps.changes.outputs.backend == 'true'
         uses: actions/setup-java@v4
         with:
           java-version: '21'
@@ -29,7 +29,7 @@ jobs:
           cache: maven
 
       - name: Build with Maven
-        if: steps.changes.outputs.backend == 'true'
+        #if: steps.changes.outputs.backend == 'true'
         run: |
           cd cricket/cricket
           mvn --batch-mode --update-snapshots verify -Dmaven.test.skip
@@ -44,7 +44,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push docker image
-        if: steps.changes.outputs.backend == 'true'
+        #if: steps.changes.outputs.backend == 'true'
         uses: docker/build-push-action@v4
         with:
           context: .
@@ -53,7 +53,7 @@ jobs:
           tags: pragadeesht/spring-app:latest
 
       - name: pull springboot
-        if: steps.changes.outputs.backend == 'true'
+        #if: steps.changes.outputs.backend == 'true'
         run: docker pull pragadeesht/spring-app:latest
 
 

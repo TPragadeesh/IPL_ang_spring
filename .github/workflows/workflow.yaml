@@ -127,20 +127,20 @@ jobs:
 
       - name: check images
         run: docker images
-#      - name: build elastic search image
-#        run: docker pull docker.elastic.co/elasticsearch/elasticsearch:8.8.1
-#
-#      - name: build springboot image
-#        run: docker pull pragadeesht/spring-app:latest
-#
-#      - name: build angular image
-#        run: docker pull pragadeesht/angulartest2:latest
+      - name: build elastic search image
+        run: docker pull docker.elastic.co/elasticsearch/elasticsearch:8.8.1
+
+      - name: build springboot image
+        run: docker pull pragadeesht/spring-app:latest
+
+      - name: build angular image
+        run: docker pull pragadeesht/angulartest2:latest
 
 
-#      - name: docker compose
-#        run: |
-#            cd cricket
-#            cd cricket
-#            docker compose up
+      - name: docker compose
+        run: |
+            cd cricket
+            cd cricket
+            docker compose up
 
 

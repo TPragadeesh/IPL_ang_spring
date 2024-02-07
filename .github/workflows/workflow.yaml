@@ -99,11 +99,13 @@ jobs:
       - name: build elastic search image
         run: docker pull pragadeesht/spring-app:latest
 
+      - name: build angular image
+        run: docker pull pragadeesht/angulartest2:latest
       - name: docker compose
         run: |
           cd cricket
           cd cricket
-          docker compose up
+          docker compose up -d
           mvn test
           
 

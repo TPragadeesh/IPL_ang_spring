@@ -38,7 +38,7 @@ jobs:
         if: steps.changes.outputs.frontend == 'true'
         run: |
           cd train_app
-          docker build -t pragadeesht/angular2:latest .
+          docker build -t pragadeesht/angulartest2:latest .
 
       - name: Build spring image
         if: steps.changes.outputs.backend == 'true'
@@ -92,7 +92,7 @@ jobs:
       - name: Build and push angular image
         if: steps.changes.outputs.frontend == 'true'
         run: |
-          docker push pragadeesht/angulartest2:latest
+          docker push pragadeesht/angulartest:latest
 #        uses: docker/build-push-action@v4
 #        with:
 #          context: .

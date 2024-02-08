@@ -21,7 +21,7 @@ jobs:
 
 
       - name: setting up java maven
-        if: steps.changes.outputs.backend == 'true'
+#        if: steps.changes.outputs.backend == 'true'
         uses: actions/setup-java@v4
         with:
           java-version: '21'
@@ -29,7 +29,7 @@ jobs:
           cache: maven
 
       - name: Build with Maven
-        if: steps.changes.outputs.backend == 'true'
+#        if: steps.changes.outputs.backend == 'true'
         run: |
           cd cricket/cricket
           mvn --batch-mode --update-snapshots verify -Dmaven.test.skip
@@ -54,7 +54,7 @@ jobs:
           docker compose up -d
 
       - name: spring boot check
-        if: steps.changes.outputs.backend == 'true'
+#        if: steps.changes.outputs.backend == 'true'
         run: |
           cd cricket
           cd cricket
@@ -68,30 +68,34 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push docker image
-        if: steps.changes.outputs.backend == 'true'
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          file: ./cricket/Dockerfile
-          push: true
-          tags: pragadeesht/spring-app:latest
+#        if: steps.changes.outputs.backend == 'true'
+        run: |
+          docker push pragadeesht/spring-app:latest
+#        uses: docker/build-push-action@v4
+#        with:
+#          context: .
+#          file: ./cricket/Dockerfile
+#          push: true
+#          tags: pragadeesht/spring-app:latest
 
-      - name: pull springboot
-        if: steps.changes.outputs.backend == 'true'
-        run: docker pull pragadeesht/spring-app:latest
-
-
-      - name: docker images
-        run: docker images
+#      - name: pull springboot
+#        if: steps.changes.outputs.backend == 'true'
+#        run: docker pull pragadeesht/spring-app:latest
+#
+#
+#      - name: docker images
+#        run: docker images
 
       - name: Build and push angular image
-        if: steps.changes.outputs.frontend == 'true'
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          file: ./train_app/Dockerfile
-          push: true
-          tags: pragadeesht/angulartest2:latest
+#        if: steps.changes.outputs.frontend == 'true'
+        run: |
+          docker push pragadeesht/angulartest2:latest
+#        uses: docker/build-push-action@v4
+#        with:
+#          context: .
+#          file: ./train_app/Dockerfile
+#          push: true
+#          tags: pragadeesht/angulartest2:latest
 
 
 

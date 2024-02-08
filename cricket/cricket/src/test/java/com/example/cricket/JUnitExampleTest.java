@@ -101,7 +101,7 @@ public class JUnitExampleTest {
                 "Mumbai Indians",
                 "https://th.bing.com/th/id/OIP.3S98fgqlloewXlWLxGllRwHaE8?w=242&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
                 "Aggressive Batsman",
-                "None",
+                "No",
                 "Fit");
 
         var player = playerService.getPlayerByName("Rohit Sharma");

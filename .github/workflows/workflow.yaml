@@ -35,12 +35,14 @@ jobs:
           mvn --batch-mode --update-snapshots verify -Dmaven.test.skip
 
       - name: docker compose
+        if: steps.changes.outputs.backend == 'true'
         run: |
           cd cricket
           cd cricket
           docker compose up -d
 
       - name: spring boot check
+        if: steps.changes.outputs.backend == 'true'
         run: |
           cd cricket
           cd cricket

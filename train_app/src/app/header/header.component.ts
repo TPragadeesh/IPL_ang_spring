@@ -18,7 +18,7 @@ export class HeaderComponent {
   menuType:string = "default";
   teamName:string = "";
   searchResult:undefined|player[];
-  bcolor:string = "red";
+  bcolor:string = "yellow";
 
   constructor(private route:Router, private product: ProductService, private manager: SellerService){}
 

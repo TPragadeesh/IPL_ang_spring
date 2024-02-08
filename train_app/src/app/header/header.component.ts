@@ -48,7 +48,7 @@ export class HeaderComponent {
         }else {
           console.warn("outside of manager area");
           this.menuType = "default"
-          this.bcolor = "#0082e6";
+          this.bcolor = "yellow";
 
         }
       }

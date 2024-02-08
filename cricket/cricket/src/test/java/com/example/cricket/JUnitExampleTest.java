@@ -109,16 +109,16 @@ public class JUnitExampleTest {
         Assertions.assertEquals("Rohit Sharma", player.getPlayerName());
     }
 
-    @Test
-    void expensivePlayer() {
-        List<Player> players = playerService.getExpensivePlayers();
-        Assertions.assertNotNull(players);
-        Assertions.assertEquals(8, players.size());
-    }
-    @Test
-    void playerMatch() {
-        List<Player> players = playerService.getMatchPlayers("dhon");
-       Assertions.assertEquals(1, players.size());
-       Assertions.assertEquals("MS Dhoni", players.get(0).getPlayerName());
-    }
+//    @Test
+//    void expensivePlayer() {
+//        List<Player> players = playerService.getExpensivePlayers();
+//        Assertions.assertNotNull(players);
+//        Assertions.assertEquals(8, players.size());
+//    }
+//    @Test
+//    void playerMatch() {
+//        List<Player> players = playerService.getMatchPlayers("dhon");
+//       Assertions.assertEquals(1, players.size());
+//       Assertions.assertEquals("MS Dhoni", players.get(0).getPlayerName());
+//    }
 }

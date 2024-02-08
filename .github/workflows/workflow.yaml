@@ -35,10 +35,14 @@ jobs:
           mvn --batch-mode --update-snapshots verify -Dmaven.test.skip
 
       - name: Build angular image
-        run: docker build -t pragadeesht/angular2:latest ./train_app
+        run: |
+          cd train_app
+          docker build -t pragadeesht/angular2:latest .
 
       - name: Build spring image
-        run: docker build -t pragadeesht/spring-app:latest ./cricket
+        run: |
+          cd cricket
+          docker build -t pragadeesht/spring-app:latest .
 
       - name: display images
         run: docker images

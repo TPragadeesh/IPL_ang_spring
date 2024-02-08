@@ -26,7 +26,7 @@ public class JUnitExampleTest {
         managerService.addManager("Chennai Super Kings", "password1", "https://www.hdwallpapers.in/download/chennai_super_kings_logo_in_black_background_hd_sports-1920x1080.jpg","#e2e600" );
         managerService.addManager("Royal Challengers Bangalore", "password1","https://images.indiafantasy.com/wp-content/uploads/20230313150350/RCB-logo-1.png","#e60f00");
         managerService.addManager("Mumbai Indians","password1","https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Mumbai_Indians_Logo.svg/1280px-Mumbai_Indians_Logo.svg.png","#0082e6");
-        managerService.addManager("Delhi Daredevils","password1","https://www.pngall.com/wp-content/uploads/2017/04/Delhi-Daredevils-Logo-PNG.png","#e60f00");
+        //managerService.addManager("Delhi Daredevils","password1","https://www.pngall.com/wp-content/uploads/2017/04/Delhi-Daredevils-Logo-PNG.png","#e60f00");
         var manager = managerService.findManager("Chennai Super Kings", "password1");
         Assertions.assertNotNull(manager);
         Assertions.assertEquals("Chennai Super Kings", manager.getTeamName());

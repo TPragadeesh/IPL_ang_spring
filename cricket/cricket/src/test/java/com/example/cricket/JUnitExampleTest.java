@@ -95,22 +95,30 @@ public class JUnitExampleTest {
                 "Best wicket-keeper and an excellent captain ",
                 "Poor batting Form",
                 "Injured");
+        playerService.addPlayer("Hardik Pandya",
+                "All-rounder (pace)",
+                "1000000",
+                "Mumbai Indians",
+                "https://th.bing.com/th/id/OIP.3S98fgqlloewXlWLxGllRwHaE8?w=242&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+                "Aggressive Batsman",
+                "None",
+                "Fit");
 
         var player = playerService.getPlayerByName("Rohit Sharma");
         Assertions.assertNotNull(player);
         Assertions.assertEquals("Rohit Sharma", player.getPlayerName());
     }
 
-//    @Test
-//    void expensivePlayer() {
-//        List<Player> players = playerService.getExpensivePlayers();
-//        Assertions.assertNotNull(players);
-//        Assertions.assertEquals(8, players.size());
-//    }
-//    @Test
-//    void playerMatch() {
-//        List<Player> players = playerService.getMatchPlayers("dhon");
-//       Assertions.assertEquals(1, players.size());
-//       Assertions.assertEquals("MS Dhoni", players.get(0).getPlayerName());
-//    }
+    @Test
+    void expensivePlayer() {
+        List<Player> players = playerService.getExpensivePlayers();
+        Assertions.assertNotNull(players);
+        Assertions.assertEquals(8, players.size());
+    }
+    @Test
+    void playerMatch() {
+        List<Player> players = playerService.getMatchPlayers("dhon");
+       Assertions.assertEquals(1, players.size());
+       Assertions.assertEquals("MS Dhoni", players.get(0).getPlayerName());
+    }
 }

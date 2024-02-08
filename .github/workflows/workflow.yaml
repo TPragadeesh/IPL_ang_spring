@@ -34,8 +34,16 @@ jobs:
           cd cricket/cricket
           mvn --batch-mode --update-snapshots verify -Dmaven.test.skip
 
+      - name: Build angular image
+        run: docker build -t pragadeesht/angular2:latest ./train_app
+
+      - name: Build spring image
+        run: docker build -t pragadeesht/spring-app:latest ./cricket
+
+      - name: display images
+        run: docker images
+
       - name: docker compose
-        if: steps.changes.outputs.backend == 'true'
         run: |
           cd cricket
           cd cricket

@@ -18,7 +18,8 @@ export class HeaderComponent {
   menuType:string = "default";
   teamName:string = "";
   searchResult:undefined|player[];
-  bcolor:string = "yellow";
+  bcolor:string = "#0082e6";
+
 
   constructor(private route:Router, private product: ProductService, private manager: SellerService){}
 
@@ -48,7 +49,7 @@ export class HeaderComponent {
         }else {
           console.warn("outside of manager area");
           this.menuType = "default"
-          this.bcolor = "yellow";
+          this.bcolor = "#0082e6";
 
         }
       }
